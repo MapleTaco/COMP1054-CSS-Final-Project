@@ -386,10 +386,16 @@ html {
 
 /* increase height spacing and size; feels too tight.  */
 body {
-    line-height: 1.6;
+    line-height: 1.7;
     font-size: 130%;
-    background-color: #110224;
-    color: #ffffff;
+    background: repeating-linear-gradient(
+  45deg,
+  #383838,
+  #484848 10px,
+  #282828 10px,
+  #484848 20px
+);
+    color: #eeeeee;
     letter-spacing: 0.1rem;
 	padding-left: 1rem;
 }
@@ -402,7 +408,6 @@ header div {
 /* add dark background and some more space */
 header, nav {
 	background-color: #101010;
-	padding: 0.5em;
 }
 
 /* add red double border to left and topside of header */
@@ -412,16 +417,22 @@ header {
 	border-left: 0.3rem double #ee0000;
 }
 
+/* add back the link line for the author  */
 header a {
-	color: #363bb6;
+	color: #5a5ff1;
 	margin: auto;
-	
+	text-decoration: underline;
+}
+
+.link-github {
+	background-color: rgb(212, 212, 0);
+	color: #101010;
 }
 
 /* line up the nav element with the header */
 nav {
 	border-left: .3rem double #ee0000;
-	padding: 1.5em;
+	padding: 1em;
 	border-bottom: .3rem double #ee0000;
 	margin-bottom: 2rem;
 	margin-top: -2rem;
@@ -429,11 +440,12 @@ nav {
 
 /* stack shadows to mimic game title screen menu */
 h1 {
+	line-height: 4.5rem;
 	text-transform: uppercase;
 	color: #101010;
 	font-size: 4rem;
-	margin-top: 0;
-	margin-bottom: 0;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 	text-shadow: 
 	0 0 1px #ff0000,
 	0 0 2px #ff0000,
@@ -448,13 +460,19 @@ h1 {
 h2 {
 	font-size: 1.5rem;
 	margin: 0;
-	color: #363bb6;
+	color: #5a5ff1;
 }
 
-/* set article h2 to blue */
+/* set article h2 to orange, add shadows to mimic text outline */
 main h2 {
-	color: #f2914d;
-	background-color: #050973;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: #ffffff;
+	background-color: rgba(152, 61, 0, 0.6);
+	padding-left: 0.5rem;
+	border-top: 5px solid #F36D13;
+	border-left: 5px solid #F36D13;
+	border-bottom: 5px solid #F36D13;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 /* remove link underlines, change color */
@@ -464,21 +482,33 @@ a {
 	font-weight: 600;
 }
 
+main a {
+	background-color: #050973;
+}
+
+main p {
+	background-color: rgba(47,14,10,0.8);
+	padding-top: 1rem;
+	padding-left: 1rem;
+	padding-bottom: 1rem;
+}
+
 .skip-link {
-	
+	color: #ffffff;
 }
 
 /* make the star image a bit smaller; it's in the way */
 svg {
     width: 1rem;
     image-resolution: 1dpi;
-    filter: invert(50%) sepia(98%) saturate(2812%) hue-rotate(356deg) brightness(100%) contrast(92%);
+    filter: invert(13%) sepia(61%) saturate(6723%) hue-rotate(356deg) brightness(110%) contrast(118%);
 }
 
 /* remove the dots on nav ul and stylize it */
 nav ul {
     list-style: none;
     position: relative;
+	padding-left: 1.5rem;
     background-image:
 
 	/* this is for the custom border. It uses an svg image */
@@ -509,25 +539,35 @@ nav ul li {
 
 nav ul li a {
 	color: #ddd;
-	letter-spacing: 0.8rem;
+	letter-spacing: 0.4rem;
 }
 
 /* add pilcrow symbol for each selection */
-nav ul li::after {
+nav ul li::after, .skip-link::after {
 	content: "¶";
 	color: #ee0000;
 }
 
 blockquote {
-	background-color: #101010;
+	margin: 0;
+	margin-right: 1rem;
+	background: linear-gradient(
+  45deg,
+  #000000,
+  #48305F 400px,
+  #000000 700px
+);
 	text-align: center;
 	padding: 1.3rem;
 	border:7px solid gray;
 	border-radius: 30%;
+	outline: 3px solid rgba(0, 0, 0, 0.3);
 }
 
 blockquote p {
 	font-family:'Courier New', Courier, monospace;
+	padding: 0;
+	background-color: transparent;
 }
 
 blockquote strong {
@@ -537,8 +577,18 @@ blockquote strong {
 
 blockquote a {
 	color: white;
-	background-color: green;
-	padding: 0.5rem;
-	white-space: nowrap;
-	
+	background-color: rgba(0, 255, 0, 0.3);
+	padding: 0.3rem;
 }
+
+p+ul li {
+	list-style: none;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: #ffffff;
+	background-color: rgba(152, 61, 0, 0.6);
+	padding-left: 0.5rem;
+	border-top: 5px solid #F36D13;
+	border-left: 5px solid #F36D13;
+	border-bottom: 5px solid #F36D13;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}	
