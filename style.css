@@ -5,16 +5,17 @@ Student ID: 200551990
 Student Email: daniel.perusse@mygeorgian.ca
 Course Code: COMP1054 Interface Design Using CSS
 
-Project Comments: Design is inspired by the
-main menu of a video game called "Killer7"
-
+Project Comments: Design is inspired by 
+"Killer 7". It features a fairly unique
+and crazy style. Site design is based off
+different menus and text present throughout 
+the game. Video Example:
+https://www.youtube.com/watch?v=oXu8aiASr6E
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 /*I applied the normalize here, after the @charset
 and @import since we cannot edit the HTML file.
-My css starts past line 364.
+My css starts past line 371.
 */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -373,85 +374,171 @@ My css starts past line 364.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
 
+/* set the main html to border box */
 html {
     box-sizing: border-box;
 }
 
+/* make everything inherit border box */
 *, *::before, *::after {
 	box-sizing: inherit;
 }
 
-/* setup pixel font, increase height spacing and size; feels too tight.  */
+/* increase height spacing and size; feels too tight.  */
 body {
-    font-family:'Pixelify Sans',Lato,LatoExtended,sans-serif;
     line-height: 1.6;
     font-size: 130%;
-    background-color: #101010;
+    background-color: #110224;
     color: #ffffff;
     letter-spacing: 0.1rem;
-    padding: 1rem;
+	padding-left: 1rem;
 }
 
-h1, h2, h3 {
-    text-transform: uppercase;
-    font-weight: 100;
-    letter-spacing: 0.5rem;
-    color: #ffffff;
-    background-color: #ff0000;
-    text-align: center;
-
+/* add some spacing inside the header div  */
+header div {
+	padding-left: 1rem ;
 }
 
+/* add dark background and some more space */
+header, nav {
+	background-color: #101010;
+	padding: 0.5em;
+}
+
+/* add red double border to left and topside of header */
+header {
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	border-top: 0.3rem double #ee0000;
+	border-left: 0.3rem double #ee0000;
+}
+
+header a {
+	color: #363bb6;
+	margin: auto;
+	
+}
+
+/* line up the nav element with the header */
+nav {
+	border-left: .3rem double #ee0000;
+	padding: 1.5em;
+	border-bottom: .3rem double #ee0000;
+	margin-bottom: 2rem;
+	margin-top: -2rem;
+}
+
+/* stack shadows to mimic game title screen menu */
+h1 {
+	text-transform: uppercase;
+	color: #101010;
+	font-size: 4rem;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-shadow: 
+	0 0 1px #ff0000,
+	0 0 2px #ff0000,
+	0 0 3px #ff0000,
+	0 0 4px #ff0000,
+	0 0 7px #ff0000,
+	0 0 9px #ff0000,
+	0 0 11px #ff0000,
+	0 0 13px #ff0000;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin: 0;
+	color: #363bb6;
+}
+
+/* set article h2 to blue */
+main h2 {
+	color: #f2914d;
+	background-color: #050973;
+}
+
+/* remove link underlines, change color */
 a {
     text-decoration: none;
-    color: #ff0000;
+    color: #F36D13;
+	font-weight: 600;
 }
-a:hover {
-    color:#aa0000;
+
+.skip-link {
+	
 }
 
 /* make the star image a bit smaller; it's in the way */
 svg {
-    width: 10%;
+    width: 1rem;
     image-resolution: 1dpi;
-    filter: invert(15%) sepia(100%) saturate(6617%) hue-rotate(3deg) brightness(109%) contrast(120%);
+    filter: invert(50%) sepia(98%) saturate(2812%) hue-rotate(356deg) brightness(100%) contrast(92%);
 }
 
+/* remove the dots on nav ul and stylize it */
 nav ul {
+    list-style: none;
     position: relative;
-    text-align: center;
-    border: 0.1rem solid #454545;
-    padding: 0;
-    clip-path: polygon(
-    0 10%,
-    10% 0,
-    90% 0,
-    100% 10%,
-    100% 90%,
-    90% 100%,
-    10% 100%,
-    0% 90%,
-    0% 10%
-  )
+    background-image:
+
+	/* this is for the custom border. It uses an svg image */
+	/* Tool used to make this: https://kovart.github.io/dashed-border-generator/ */
+	url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='4' stroke-dasharray='7%2c 40' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"),
+
+	/* this is for the diamond background */
+	/* reference: https://css-tricks.com/stripes-css/ */
+	repeating-linear-gradient(
+      	60deg,
+      	transparent,
+      	#770000 1px,
+      	transparent 1px,
+      	transparent 12px
+    ),
+    repeating-linear-gradient(
+      	120deg,
+      	transparent,
+		#770000 1px,
+      	transparent 1px,
+      	transparent 12px
+    );
 }
 
 nav ul li {
-    font-weight: 900;
-    list-style-type: none;
-    letter-spacing: -.2rem;
-    text-align: left;
-    padding: .1rem 0 .1rem 0;
+	padding:.7rem 0 .7rem 0 ;
 }
 
-nav ul li:hover {
-    letter-spacing: 1rem;
-    transition: 0.3s;
+nav ul li a {
+	color: #ddd;
+	letter-spacing: 0.8rem;
 }
 
-@media only screen  and (width >= 45rem) {
-    nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
+/* add pilcrow symbol for each selection */
+nav ul li::after {
+	content: "¶";
+	color: #ee0000;
+}
+
+blockquote {
+	background-color: #101010;
+	text-align: center;
+	padding: 1.3rem;
+	border:7px solid gray;
+	border-radius: 30%;
+}
+
+blockquote p {
+	font-family:'Courier New', Courier, monospace;
+}
+
+blockquote strong {
+	color: blue;
+	text-transform: uppercase;
+}
+
+blockquote a {
+	color: white;
+	background-color: green;
+	padding: 0.5rem;
+	white-space: nowrap;
+	
 }
