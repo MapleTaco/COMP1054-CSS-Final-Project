@@ -388,6 +388,7 @@ html {
 body {
     line-height: 1.7;
     font-size: 130%;
+    /* gradient for the site background */
     background: repeating-linear-gradient(
   45deg,
   #383838,
@@ -395,8 +396,10 @@ body {
   #282828 10px,
   #484848 20px
 );
+  	/* set base site text off-white */
     color: #eeeeee;
     letter-spacing: 0.1rem;
+	/* separate the text boxes from the left of the screen */
 	padding-left: 1rem;
 }
 
@@ -405,16 +408,26 @@ header div {
 	padding-left: 1rem ;
 }
 
-/* add dark background and some more space */
+/* add dark background for the header and nav */
 header, nav {
 	background-color: #101010;
 }
 
-/* add red double border to left and topside of header */
+/* add red double border to left and top of header */
 header {
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	border-top: 0.3rem double #ee0000;
 	border-left: 0.3rem double #ee0000;
+}
+
+/* remove link underlines, change color */
+a {
+    text-decoration: none;
+	font-weight: 600;
+	color: white;
+	background-color: rgba(0, 255, 0, 0.3);
+	padding: 0.3rem;
+	font-family:'Courier New', Courier, monospace;
 }
 
 /* add back the link line for the author  */
@@ -422,14 +435,19 @@ header a {
 	color: #5a5ff1;
 	margin: auto;
 	text-decoration: underline;
+	background-color: transparent;
+	padding: 0;
 }
 
-.link-github {
+/* customize the star button inside header */
+header .link-github {
 	background-color: rgb(212, 212, 0);
 	color: #101010;
+	padding: 0.3rem;
+	text-decoration: none;
 }
 
-/* line up the nav element with the header */
+/* line up the nav element with the header and add border */
 nav {
 	border-left: .3rem double #ee0000;
 	padding: 1em;
@@ -439,6 +457,7 @@ nav {
 }
 
 /* stack shadows to mimic game title screen menu */
+/* tighten up the margins and line-height */
 h1 {
 	line-height: 4.5rem;
 	text-transform: uppercase;
@@ -457,17 +476,23 @@ h1 {
 	0 0 13px #ff0000;
 }
 
-h2 {
+/* setup header text under title */
+header h2 {
 	font-size: 1.5rem;
 	margin: 0;
 	color: #5a5ff1;
 }
 
+/* center h3 and make it the box as big as the text */
 h3 {
+	font-family:'Courier New', Courier, monospace;
+	width:fit-content;
 	font-size: 1.5rem;
-	margin: 0;
-	color: rgba(255, 0, 0, 0.853);
-	background-color: rgba(255, 255, 0, 0.803);
+	margin: auto;
+	color: rgba(255, 0, 0, 0.8);
+	background-color: rgba(255, 255, 0, 0.7);
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 /* set article h2 to orange, add shadows to mimic text outline */
@@ -482,17 +507,7 @@ main h2 {
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-/* remove link underlines, change color */
-a {
-    text-decoration: none;
-    color: #F36D13;
-	font-weight: 600;
-}
-
-main a {
-	background-color: #050973;
-}
-
+/* add dark transparent backgrounds for main article text */
 main p {
 	background-color: rgba(47,14,10,0.8);
 	padding-top: 1rem;
@@ -503,13 +518,14 @@ main p {
 	border-bottom: 5px solid rgb(47,14,10);
 }
 
+/* customize the skip link at the top a little bit */
 .skip-link {
 	color: #ffffff;
 	background-color: rgba(0, 255, 0, 0.3);
 	padding: 0.3rem;
 }
 
-/* make the star image a bit smaller; it's in the way */
+/* make the star image a bit smaller */
 svg {
     width: 1rem;
     image-resolution: 1dpi;
@@ -545,24 +561,29 @@ nav ul {
     );
 }
 
+/* pad out the first nav elements a bit */
 nav ul li {
 	padding:.7rem 0 .7rem 0 ;
 }
 
+/* and change standard a element styles */
 nav ul li a {
 	color: #ddd;
 	letter-spacing: 0.4rem;
+	background-color: transparent;
 }
 
-/* add pilcrow symbol for each selection */
+/* add pilcrow symbol for each selection, like in the game */
 nav ul li::after {
 	content: "¶";
 	color: #ee0000;
 }
 
+/* make the blockquote look kinda like the tv screen menu in game */
 blockquote {
 	margin: 0;
 	margin-right: 1rem;
+	/* add gradient to mimic purple drapery in background */
 	background: linear-gradient(
   45deg,
   #000000,
@@ -576,25 +597,24 @@ blockquote {
 	outline: 3px solid rgba(0, 0, 0, 0.3);
 }
 
+/* differentiate style from standard p style */
 blockquote p {
 	font-family:'Courier New', Courier, monospace;
 	padding: 0;
 	background-color: transparent;
 	border: 0;
+	/* add some margin to reduce border clipping */
+	margin: 0.7rem;
 }
 
+/* a little bit of style for the blockquote strong element  */
+/* would have used blue like in game, but has poor contrast. make it green instead */
 blockquote strong {
-	color: blue;
+	color: green;
 	text-transform: uppercase;
 }
 
-main a {
-	color: white;
-	background-color: rgba(0, 255, 0, 0.3);
-	padding: 0.3rem;
-	font-family:'Courier New', Courier, monospace;
-}
-
+/* set css listing ul element as a flex container and center it a bit */
 p+ul {
 	display: flex;
 	flex-wrap: wrap;
@@ -603,14 +623,18 @@ p+ul {
 	margin-right: 1rem;
 }
 
+/* style the flex elements like the boxes used to navigate in the game */
 p+ul li {
+	text-align: center;
+	flex-grow: 1;
+	margin: 0.4rem;
 	list-style: none;
 	font-size: 1.3rem;
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	color: #ffffff;
-	background-color: rgba(5, 1, 99, 0.503);
+	background-color: rgba(99, 99, 99, 0.503);
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
-	border: 5px solid #130dc1;
+	border: 5px solid #c7c7c7;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }	
