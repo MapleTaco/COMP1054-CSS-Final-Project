@@ -445,6 +445,7 @@ header .link-github {
 	color: #101010;
 	padding: 0.3rem;
 	text-decoration: none;
+	text-transform: uppercase;
 }
 
 /* line up the nav element with the header and add border */
@@ -459,6 +460,7 @@ nav {
 /* stack shadows to mimic game title screen menu */
 /* tighten up the margins and line-height */
 h1 {
+	font-style: italic;
 	line-height: 4.5rem;
 	text-transform: uppercase;
 	color: #101010;
@@ -493,6 +495,7 @@ h3 {
 	background-color: rgba(255, 255, 0, 0.7);
 	padding-left: 1rem;
 	padding-right: 1rem;
+	text-transform: uppercase;
 }
 
 /* set article h2 to orange, add shadows to mimic text outline */
@@ -533,7 +536,7 @@ svg {
 }
 
 /* remove the dots on nav ul and stylize it */
-nav ul {
+nav ul{
     list-style: none;
     position: relative;
 	padding-left: 1.5rem;
@@ -562,19 +565,20 @@ nav ul {
 }
 
 /* pad out the first nav elements a bit */
-nav ul li {
+nav ul li{
 	padding:.7rem 0 .7rem 0 ;
 }
 
 /* and change standard a element styles */
-nav ul li a {
+nav ul li a{
+	font-family: 'Times New Roman', Times, serif;
 	color: #ddd;
 	letter-spacing: 0.4rem;
 	background-color: transparent;
 }
 
 /* add pilcrow symbol for each selection, like in the game */
-nav ul li::after {
+nav ul li::after{
 	content: "¶";
 	color: #ee0000;
 }
@@ -615,7 +619,7 @@ blockquote strong {
 }
 
 /* set css listing ul element as a flex container and center it a bit */
-p+ul {
+main p+ul {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -624,7 +628,7 @@ p+ul {
 }
 
 /* style the flex elements like the boxes used to navigate in the game */
-p+ul li {
+main p+ul li {
 	text-align: center;
 	flex-grow: 1;
 	margin: 0.4rem;
@@ -636,5 +640,189 @@ p+ul li {
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 	border: 5px solid #c7c7c7;
+	/* again, using text shadow trick to make text outline */
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}	
+}
+
+/* style the featured styles section like the how it works section */
+#styles {
+	margin: 0;
+	margin-right: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	/* add gradient to mimic purple drapery in background */
+	background: linear-gradient(
+  	45deg,
+	#000000,
+	#48305F 400px,
+  	#000000 700px
+);
+	text-align: center;
+	padding: 1.3rem;
+	border:7px solid gray;
+	border-radius: 30%;
+	outline: 3px solid rgba(0, 0, 0, 0.3);
+}
+
+#styles div {
+	font-family:'Courier New', Courier, monospace;
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+	/* add some margin to reduce border clipping */
+	margin: 0.7rem;
+}
+
+#styles div h2 {
+	color: green;
+	text-transform: uppercase;
+}
+
+#styles div ul {
+	list-style: none;
+	padding: 0;
+}
+
+/* remove padding and add margin to steps to contribute list */
+#contribute section+section ol {
+	padding: 0;
+	margin-right: 1rem;
+}
+
+/* remove the numbering, add transparent borders and background */
+/* margin to space it out */
+#contribute section+section li {
+	list-style: none;
+	background-color: rgba(0, 0, 161, 0.374);
+	border: 5px solid rgba(0, 0, 255, 0.77);
+	text-align: center;
+	margin: 0.4rem;
+}
+
+/* styling the source file footer like the header */
+#contribute footer {
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	border-top: 0.3rem double #ee0000;
+	border-left: 0.3rem double #ee0000;
+	border-bottom: 0.3rem double #ee0000;
+	background-color: #101010;
+}
+
+/* style the border and background just like the menu at the start */
+#contribute footer div {
+	margin: 1rem ;
+	padding-left: 1.5rem;
+	background-color: #101010;
+    background-image:
+	url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='4' stroke-dasharray='7%2c 40' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"),
+
+	repeating-linear-gradient(
+      	60deg,
+      	transparent,
+      	#770000 1px,
+      	transparent 1px,
+      	transparent 12px
+    ),
+    repeating-linear-gradient(
+      	120deg,
+      	transparent,
+		#770000 1px,
+      	transparent 1px,
+      	transparent 12px
+    );
+}
+
+/* Again, style the h3 similar to the title, but no glow. */
+#contribute footer h3 {
+	font-style: italic;
+	background-color: transparent;
+	font-size: 2rem;
+	color: #ee0000e0;
+	padding: 0;
+	margin: 0;
+	padding-top: 1rem;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* style the listings exactly like at the top */
+#contribute footer a {
+	padding:.7rem 0 .7rem 0;
+	font-family: 'Times New Roman', Times, serif;
+	color: #ddd;
+	letter-spacing: 0.4rem;
+	background-color: transparent;
+	/* need to set display to block to move the elements underneath each other */
+	display: block;
+	
+}
+
+/* mandatory red pilcrow */
+#contribute footer a::after {
+	content: "¶";
+	color: #ee0000;
+	
+}
+
+/* set dark background for footer, make font a tad smaller */
+.page-footer {
+	font-size: 1rem;
+	background-color: rgba(47,14,10,0.8);
+	margin-left: -1rem;
+	margin-bottom: -1rem;
+	padding-top: 1rem;
+	padding-left: 1rem;
+	padding-bottom: 1rem;
+	border-top: 5px solid rgb(47,14,10);
+}
+
+.page-footer a {
+	font-size: 1rem;
+}
+
+.page-footer ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+/* make the nav menu a side menu on computers */
+@media only screen and (width >= 1024px) {
+
+	body {
+		padding-left: 35%;
+	}
+	header {
+		padding-bottom: 1rem;
+		border-bottom: 5px double #ee0000;
+	}
+
+	header+nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 34%;
+		border-right: 5px double #ee0000;
+		padding-bottom: 0;
+		border-left: none;
+	}
+
+	header+nav ul li {
+		padding: 0.2rem;
+	}
+
+	header+nav ul li a {
+		letter-spacing: -.2rem;
+		transition: letter-spacing 0.2s;
+	}
+
+	header+nav ul li a:hover {
+		letter-spacing: 0.6rem;
+		transition: letter-spacing 0.2s;
+	}
+
+	#styles {
+		position: fixed;
+		top: 18rem;
+		left: 0;
+		width: 34%;
+	}
+}
