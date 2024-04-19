@@ -620,19 +620,15 @@ blockquote, #styles {
 
 /* differentiate style from standard p style */
 blockquote p, #styles div, #styles h2 {
-	font-family: 'Pixelify Sans', 'Courier New', Courier, monospace;
+	font-family:  'Pixelify Sans', 'Courier New', Courier, monospace;
 	padding: 0;
 	background-color: transparent;
 	border: 0;
 	/* add some margin to reduce border clipping */
 	margin: 0.7rem;
-	line-height: 1.8rem;
 }
 
-#styles h2 {
-	margin: 0.25rem;
-}
-
+/* apply custom font to the links as well */
 blockquote a, #styles a {
 	font-family: 'Pixelify Sans', 'Courier New', Courier, monospace;
 }
@@ -807,6 +803,8 @@ h4 {
 	}
 
 	/* make the featured styles menu a fixed menu as well */
+	/* unfortunately text looks small on big screen */
+	/* haven't figured out how to fix it yet. looks fine on small pcs */
 	#styles {
 		position: fixed;
 		top: 18rem;
@@ -815,6 +813,7 @@ h4 {
 		height: 47%;
 		font-size: 0.7em;
 		padding: 0;
+		line-height: 1.75rem;
 	}
 
 	/* center the div inside styles */
