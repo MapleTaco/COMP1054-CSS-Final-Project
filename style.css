@@ -13,9 +13,14 @@ the game. Video Example:
 https://www.youtube.com/watch?v=oXu8aiASr6E
 */
 
-/*I applied the normalize here, after the @charset
+/* Some fun font for the title */
+/* wanted something for the tv's as well but font is too different from family. causes issues */
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+/*
+I applied the normalize here, after the @charset
 and @import since we cannot edit the HTML file.
-My css starts past line 371.
+My css starts past line 376.
 */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -460,6 +465,8 @@ nav {
 /* stack shadows to mimic game title screen menu */
 /* tighten up the margins and line-height */
 h1 {
+
+	font-family: 'Jockey One', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-style: italic;
 	line-height: 4.5rem;
 	text-transform: uppercase;
@@ -531,6 +538,7 @@ main p, .profile {
 svg {
     width: 1rem;
     image-resolution: 1dpi;
+	/* Tool use to create filter for image: https://codepen.io/sosuke/pen/Pjoqqp */
     filter: invert(13%) sepia(61%) saturate(6723%) hue-rotate(356deg) brightness(110%) contrast(118%);
 }
 
@@ -614,7 +622,7 @@ blockquote, #styles {
 
 /* differentiate style from standard p style */
 blockquote p, #styles div {
-	font-family:'Courier New', Courier, monospace;
+	font-family: 'Courier New', Courier, monospace;
 	padding: 0;
 	background-color: transparent;
 	border: 0;
