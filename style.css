@@ -775,26 +775,38 @@ main p+ul li {
 	border-top: 5px solid rgb(47,14,10);
 }
 
+/* smaller font for the footer links too */
 .page-footer a {
 	font-size: 1rem;
 }
 
+/* remove the dots on the list items in the footer */
 .page-footer ul {
 	list-style: none;
 	padding-left: 0;
 }
 
-/* make the nav menu a side menu on computers */
+/* put the current style and source files side-by-side on tablets and larger */
+/* TODO: ACTUALLY DO THIS */
+@media only screen and (width >=768px) {
+
+}
+
+/* make the nav menu and styles a side menu on computers */
 @media only screen and (width >= 1024px) {
 
+	/* change body padding to make space */
 	body {
 		padding-left: 35%;
 	}
+
+	/* give a border and some padding since the nav is gone */
 	header {
 		padding-bottom: 1rem;
 		border-bottom: 5px double #ee0000;
 	}
 
+	/* set position to fixed and change borders w/ width scaling */
 	header+nav {
 		position: fixed;
 		top: 0;
@@ -805,20 +817,26 @@ main p+ul li {
 		border-left: none;
 	}
 
+	/* tighten up the list item padding */
 	header+nav ul li {
 		padding: 0.2rem;
 	}
 
+	/* overlap the links letter-spacing in the menu  */
+	/* again, this is based of the game menu */
 	header+nav ul li a {
 		letter-spacing: -.2rem;
 		transition: letter-spacing 0.2s;
 	}
 
+	/* spread it out on hover */
 	header+nav ul li a:hover {
-		letter-spacing: 0.6rem;
+		letter-spacing: 0.9rem;
 		transition: letter-spacing 0.2s;
 	}
 
+	/* TODO: FIX THIS MENU WHEN SCREEN GETS SMALL HEIGHT-WISE */
+	/* make the featured styles menu a fixed menu as well */
 	#styles {
 		position: fixed;
 		top: 18rem;
