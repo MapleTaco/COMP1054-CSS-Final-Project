@@ -804,7 +804,7 @@ h4 {
 
 	/* make the featured styles menu a fixed menu as well */
 	/* unfortunately text looks small on big screen */
-	/* haven't figured out how to fix it yet. looks fine on small pcs */
+	/* haven't figured out how to fix it yet. looks fine on small pc screens */
 	#styles {
 		position: fixed;
 		top: 18rem;
