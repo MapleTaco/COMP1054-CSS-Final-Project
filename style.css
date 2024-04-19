@@ -13,10 +13,8 @@ the game. Video Example:
 https://www.youtube.com/watch?v=oXu8aiASr6E
 */
 
-/* Some fun font for the title */
-/* wanted something for the tv's as well but font is too different from family. causes issues */
-@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
-
+/* Some fun font for the title and tv-like blocks*/
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Pixelify+Sans:wght@400..700&display=swap');
 /*
 I applied the normalize here, after the @charset
 and @import since we cannot edit the HTML file.
@@ -621,13 +619,22 @@ blockquote, #styles {
 }
 
 /* differentiate style from standard p style */
-blockquote p, #styles div {
-	font-family: 'Courier New', Courier, monospace;
+blockquote p, #styles div, #styles h2 {
+	font-family: 'Pixelify Sans', 'Courier New', Courier, monospace;
 	padding: 0;
 	background-color: transparent;
 	border: 0;
 	/* add some margin to reduce border clipping */
 	margin: 0.7rem;
+	line-height: 1.8rem;
+}
+
+#styles h2 {
+	margin: 0.25rem;
+}
+
+blockquote a, #styles a {
+	font-family: 'Pixelify Sans', 'Courier New', Courier, monospace;
 }
 
 /* add a bit of margins for the featured styles tv */
@@ -711,12 +718,13 @@ main p+ul li {
 #contribute footer h3 {
 	font-style: italic;
 	background-color: transparent;
-	font-size: 2rem;
+	font-size: 2.2rem;
 	color: #ee0000e0;
 	padding: 0;
 	margin: 0;
 	padding-top: 1rem;
-	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-family: 'Jockey One', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	letter-spacing: 0.8rem;
 }
 
 /* set dark background for footer, make font a tad smaller */
