@@ -511,7 +511,8 @@ main h2 {
 }
 
 /* add dark transparent backgrounds for main article text */
-main p {
+/* same for the current staged style box */
+main p, .profile {
 	background-color: rgba(47,14,10,0.8);
 	padding-top: 1rem;
 	padding-left: 1rem;
@@ -602,7 +603,7 @@ blockquote {
 }
 
 /* differentiate style from standard p style */
-blockquote p {
+blockquote p, #styles div {
 	font-family:'Courier New', Courier, monospace;
 	padding: 0;
 	background-color: transparent;
@@ -613,7 +614,7 @@ blockquote p {
 
 /* a little bit of style for the blockquote strong element  */
 /* would have used blue like in game, but has poor contrast. make it green instead */
-blockquote strong {
+blockquote strong, #styles div h2 {
 	color: green;
 	text-transform: uppercase;
 }
@@ -645,12 +646,12 @@ main p+ul li {
 }
 
 /* style the featured styles section like the how it works section */
+/* has slightly different margins */
 #styles {
 	margin: 0;
 	margin-right: 1rem;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	/* add gradient to mimic purple drapery in background */
 	background: linear-gradient(
   	45deg,
 	#000000,
@@ -664,20 +665,7 @@ main p+ul li {
 	outline: 3px solid rgba(0, 0, 0, 0.3);
 }
 
-#styles div {
-	font-family:'Courier New', Courier, monospace;
-	padding: 0;
-	background-color: transparent;
-	border: 0;
-	/* add some margin to reduce border clipping */
-	margin: 0.7rem;
-}
-
-#styles div h2 {
-	color: green;
-	text-transform: uppercase;
-}
-
+/* remove list style and padding in the featured styles tv block */
 #styles div ul {
 	list-style: none;
 	padding: 0;
@@ -786,10 +774,17 @@ main p+ul li {
 	padding-left: 0;
 }
 
-/* put the current style and source files side-by-side on tablets and larger */
-/* TODO: ACTUALLY DO THIS */
-@media only screen and (width >=768px) {
+/* give the current style box some margins */
+.profile {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
 
+/* change font and spacing on current stage style title */
+h4 {
+	font-family:'Courier New', Courier, monospace;
+	padding: 0;
+	margin: 0;
 }
 
 /* make the nav menu and styles a side menu on computers */
@@ -824,23 +819,36 @@ main p+ul li {
 
 	/* overlap the links letter-spacing in the menu  */
 	/* again, this is based of the game menu */
-	header+nav ul li a {
+	header+nav ul li a, #contribute footer a {
 		letter-spacing: -.2rem;
 		transition: letter-spacing 0.2s;
 	}
 
 	/* spread it out on hover */
-	header+nav ul li a:hover {
+	header+nav ul li a:hover, #contribute footer a:hover {
 		letter-spacing: 0.9rem;
 		transition: letter-spacing 0.2s;
 	}
 
-	/* TODO: FIX THIS MENU WHEN SCREEN GETS SMALL HEIGHT-WISE */
 	/* make the featured styles menu a fixed menu as well */
 	#styles {
 		position: fixed;
 		top: 18rem;
-		left: 0;
-		width: 34%;
+		left: 1rem;
+		width: 32%;
+		height: 47%;
+		font-size: 0.7em;
+		padding: 0;
+	}
+
+	/* center the div inside styles */
+	#styles div {
+		margin: auto;
+	}
+
+	/* change margin and add border on the footer */
+	.page-footer {
+		border-left: 5px solid rgb(47,14,10);
+		margin-left: 0;
 	}
 }
